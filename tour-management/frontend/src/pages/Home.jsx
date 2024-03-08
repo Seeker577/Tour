@@ -9,6 +9,8 @@ import worldImg from '../assets/images/world.png'
 import Subtitle from './../shared/subtitle';
 
 import SearchBar from '../shared/SearchBar';
+import ServiceList from '../services/ServiceList';
+import FeaturedTourList from '../components/Featued-tours/FeaturedTourList';
 
 const Home = () => {
   return <>
@@ -22,8 +24,10 @@ const Home = () => {
               <Subtitle subtitle={'Know Before You Go'}/>
               <img src={worldImg} alt="" />
             </div>
-            <h1>Traveling opens the door to creating <spanc
-            className='highlight'>memories</spanc></h1>
+            <h1>
+              Traveling opens the door to creating {" "} 
+              <span className='highlight'>memories</span>
+            </h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero facilis dignissimos itaque omnis fugiat dolores vitae saepe facere ad, debitis quas esse deserunt explicabo, eius blanditiis ipsam sed. Quod, ratione!</p>
           </div>
         </Col>
@@ -49,9 +53,32 @@ const Home = () => {
     </Container>
   </section>
   {/* =========== hero section ends ===========  */}
-
+  <section>
+    <Container>
+      <Row>
+        <Col lg='3'>
+          <h5 className='services__subtitle'>What we serve?</h5>
+          <h2 className='services__title'>We offer our best services</h2>
+        </Col>
+        <ServiceList />
+      </Row>
+    </Container>
+  </section>
+  {/* ============== featured tour section start ============== */}
+  <section>
+    <Container>
+      <Row>
+        <Col lg='12' className='mb-5'>
+          <Subtitle subtitle={"Explore"} />
+          <h2 className='featured__tour-title'>Our featured tours</h2>
+        </Col>
+        <FeaturedTourList />
+      </Row>
+    </Container>
+  </section>
+  {/* ============== featured tour section end ============== */}
 
   </>
-}
+};
 
-export default Home
+export default Home;
